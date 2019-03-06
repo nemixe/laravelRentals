@@ -13,9 +13,10 @@ class Members extends Migration
      */
     public function up()
     {
-        Schema::table('members', function (Blueprint $table) {
-            //
-        });
+        Schema::create('members', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+        });   
     }
 
     /**
@@ -25,8 +26,6 @@ class Members extends Migration
      */
     public function down()
     {
-        Schema::table('members', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('members');
     }
 }

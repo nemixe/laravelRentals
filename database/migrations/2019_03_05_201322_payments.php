@@ -13,8 +13,9 @@ class Payments extends Migration
      */
     public function up()
     {
-        Schema::table('payments', function (Blueprint $table) {
-            //
+        Schema::create('payments', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class Payments extends Migration
      */
     public function down()
     {
-        Schema::table('payments', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('payments');
     }
 }

@@ -13,8 +13,9 @@ class MovieRentals extends Migration
      */
     public function up()
     {
-        Schema::table('movie_rentals', function (Blueprint $table) {
-            //
+        Schema::create('movie_rentals', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +26,6 @@ class MovieRentals extends Migration
      */
     public function down()
     {
-        Schema::table('movie_rentals', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('movie_rentals');
     }
 }
